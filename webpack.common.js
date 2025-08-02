@@ -1,29 +1,22 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { fileURLToPath } from 'url'
 
-const mode = process.env.NODE_ENV || 'development';
-const isProd = mode === 'production';
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-module.exports = {
-  mode,
+export default {
   entry: './src/index.tsx',
   output: {
-    filename: isProd ? 'bundle.[contenthash].js' : 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
-  devtool: isProd ? false : 'inline-source-map',
-  devServer: {
-    static: './dist',
-    hot: true,
-    open: true,
-    port: 3000,
+    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].[contenthash].js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-    }
+      '@': path.resolve(__dirname, '../src'),
+    },
   },
   module: {
     rules: [
@@ -33,12 +26,26 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: { namedExport: false } },
+          },
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: { namedExport: false } },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -55,11 +62,4 @@ module.exports = {
       template: './index.html',
     }),
   ],
-  optimization: isProd
-    ? {
-      splitChunks: {
-        chunks: 'all',
-      },
-    }
-    : {},
-};
+}

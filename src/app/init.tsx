@@ -1,8 +1,13 @@
 import HistoricalDates from './pages/HistoricalDates'
+import { StrictMode } from 'react'
 
 const init = () => {
   return (
-    <HistoricalDates />
+    <StrictMode>
+      <div>
+        <HistoricalDates />
+      </div>
+    </StrictMode>
   )
 }
 
