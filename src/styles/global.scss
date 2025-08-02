@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $primary-white;
+  color: $primary-text;
+}
+
+// App styles
+h1 {
+  font-size: 60px;
+}
+
+// Animation classes

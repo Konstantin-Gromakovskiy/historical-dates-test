@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("../assets/fonts/PTSans.ttf");
+}
+
+//colors 
+$primary-white: #F4F5F9;
+$secondary-white: #ffffff;
+$color-accent: #5D5FEF;
+$color-accent-secondary: #EF5DA8;
+$primary-text: #42567A;
+$color-heading: #3877EE;
+$liner-decorator: linear-gradient(to bottom, $color-heading, $color-accent-secondary);
+
+
+//spacing
+
+
+//typography
+$font-family-base: "PT Sans", sans-serif;
+$font-wight-large: 700;
+$font-wight-base: 400;
+$font-size-super-large: 200px;
+$font-size-large: 56px;
+$font-size-base: 20px;
+$font-size-small: 14px;
