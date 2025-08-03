@@ -4,9 +4,7 @@ import { StrictMode } from 'react'
 const init = () => {
   return (
     <StrictMode>
-      <div>
-        <HistoricalDates />
-      </div>
+      <HistoricalDates />
     </StrictMode>
   )
 }

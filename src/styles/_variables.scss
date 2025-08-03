@@ -1,6 +1,6 @@
 @font-face {
   font-family: "PT Sans";
-  src: url("../assets/fonts/PTSans.ttf");
+  src: url("/src/assets/fonts/PTSans.ttf") format("truetype");
 }
 
 //colors 
@@ -18,8 +18,8 @@ $liner-decorator: linear-gradient(to bottom, $color-heading, $color-accent-secon
 
 //typography
 $font-family-base: "PT Sans", sans-serif;
-$font-wight-large: 700;
-$font-wight-base: 400;
+$font-weight-large: 700;
+$font-weight-base: 400;
 $font-size-super-large: 200px;
 $font-size-large: 56px;
 $font-size-base: 20px;

@@ -15,7 +15,7 @@ export default {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      '@': path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   module: {
@@ -26,14 +26,18 @@ export default {
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/i,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: { namedExport: false } },
+            options: {
+              modules: {
+                namedExport: false,
+                localIdentName: '[local]_[hash:base64:5]',
+              },
+            },
           },
-          // Compiles Sass to CSS
           'sass-loader',
         ],
       },
@@ -43,7 +47,12 @@ export default {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: { namedExport: false } },
+            options: {
+              modules: {
+                namedExport: false,
+                localIdentName: '[local]_[hash:base64:5]',
+              },
+            },
           },
         ],
       },
