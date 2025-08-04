@@ -23,7 +23,7 @@ const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className 
         slidesPerView={4}
         spaceBetween={80}
         freeMode={true}
-        height={200}
+        height={300}
       >
         {historicalEvents.map((event, i) => (
           <SwiperSlide

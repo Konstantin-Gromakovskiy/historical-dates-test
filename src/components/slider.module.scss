@@ -7,8 +7,8 @@
 }
 
 :global(.swiper) {
-    padding-block: 100px !important;
     padding-inline: $space-large !important;
+  height: 135px;
 
   :global(.swiper-slide) {
   }
