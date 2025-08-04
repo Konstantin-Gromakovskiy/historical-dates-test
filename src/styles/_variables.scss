@@ -3,6 +3,11 @@
   src: url("/src/assets/fonts/PTSans.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/src/assets/fonts/BebasNeue.ttf") format("truetype");
+}
+
 //colors
 $primary-white: #F4F5F9;
 $secondary-white: #ffffff;
@@ -14,14 +19,19 @@ $liner-decorator: linear-gradient(to bottom, $color-heading, $color-accent-secon
 
 
 //spacing
+$space-large: 80px;
+$space-base: 20px;
+$space-small: 14px;
 
 
 //typography
 $font-family-base: "PT Sans", sans-serif;
+$font-family-accent: "Bebas Neue", sans-serif;
 $font-weight-large: 700;
 $font-weight-base: 400;
 $font-size-super-large: 200px;
 $font-size-large: 56px;
+$font-size-medium: 25px;
 $font-size-base: 20px;
 $font-size-small: 14px;
 

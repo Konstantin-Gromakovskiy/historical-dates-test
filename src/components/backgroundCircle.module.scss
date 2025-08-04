@@ -1,7 +1,7 @@
 @use '@/styles/variables' as *;
 
 .backgroundCircleContainer {
-  position: absolute;
+  position: relative;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
@@ -59,15 +59,6 @@
       scale: 1;
     }
   }
-
-  //.title {
-  //  position: absolute;
-  //  left: 100%;
-  //  transition: $transition-animation;
-  //  opacity: 0;
-  //  scale: 0;
-  //  //display: none;
-  //}
 
   span {
     transition: $transition-animation;

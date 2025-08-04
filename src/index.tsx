@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import './styles/_global.scss'
-import init from './app/init'
+import init from './init'
 
 const vdom = document.querySelector('#root')!
 

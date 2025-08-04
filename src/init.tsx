@@ -1,4 +1,4 @@
-import HistoricalDates from './pages/HistoricalDates'
+import HistoricalDates from '@/pages/HistoricalDates'
 import { StrictMode } from 'react'
 
 const init = () => {
