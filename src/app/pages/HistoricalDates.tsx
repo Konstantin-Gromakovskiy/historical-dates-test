@@ -6,10 +6,6 @@ const HistoricalDates: FC = () => {
   const count = 6
   const [activeItemIndex, setActiveItemIndex] = useState(0)
 
-  setTimeout(() => {
-    setActiveItemIndex(1)
-  }, 1000)
-
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
@@ -17,7 +13,7 @@ const HistoricalDates: FC = () => {
         <br />
         даты
       </h1>
-      <BackgroundCircle className={styles.circle} count={count} width={530} activeItemIndex={activeItemIndex} />
+      <BackgroundCircle className={styles.circle} count={count} width={530} activeItemIndex={activeItemIndex} setActiveElem={setActiveItemIndex} />
 
       {/* TODO: Вынести это в отдельный компонент */}
       <div className={styles.dates}>

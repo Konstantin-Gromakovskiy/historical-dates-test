@@ -6,9 +6,10 @@ interface BackgroundCircleProps extends HTMLAttributes<HTMLDivElement> {
   width: number
   count: number
   activeItemIndex: number
+  setActiveElem: (index: number) => void
 }
 
-const BackgroundCircle: FC<BackgroundCircleProps> = ({ width, count, className, activeItemIndex }) => {
+const BackgroundCircle: FC<BackgroundCircleProps> = ({ width, count, className, activeItemIndex, setActiveElem }) => {
   const circleRadius = width / 2
   const points = Array.from({ length: count }, (_, i) => i)
   const activeItemDotDegree = activeItemIndex * (360 / count)
@@ -27,8 +28,13 @@ const BackgroundCircle: FC<BackgroundCircleProps> = ({ width, count, className, 
               className={styles.dot}
               data-active={i === activeItemIndex}
               style={{ left: `${x}px`, top: `${y}px` }}
+              onClick={() => setActiveElem(i)}
             >
-              {/* <span style={{ transform: `rotateZ(${dotDegree}deg) translateX(-50%) translateY(-50%)` }}>{ activeItemIndex + 1}</span> */}
+              <span
+                style={{ transform: `rotateZ(${activeItemDotDegree}deg)` }}
+              >
+                { i + 1}
+              </span>
             </button>
           )
         })}

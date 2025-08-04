@@ -39,7 +39,24 @@
         width: 56px;
         background: $primary-white;
         border: 1px solid rgba($primary-text, 0.5);
+        &>span {
+          font-size: $font-size-base;
+        }
       }
+
+      &:hover{
+        width: 56px;
+        background: $primary-white;
+        border: 1px solid rgba($primary-text, 0.5);
+        &>span {
+          font-size: $font-size-base;
+        }
+      }
+
+      span {
+        transition: all 0.3s cubic-bezier(0.6, 0.05, 0.4, 0.95);
+        font-size: 1px;
+      };
     }
   }
 }
