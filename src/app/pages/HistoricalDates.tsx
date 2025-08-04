@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import styles from './historicalDates.module.scss'
 import BackgroundCircle from '@/components/BackgroundCircle'
 import { mockData } from '@/__fixtures__/mockData'
-import HistoricalDate from '@/components/HistoricalDate'
+import HistoricalDate from '@/shared/ui/HistoricalDate'
 
 const HistoricalDates: FC = () => {
   const count = 6
@@ -19,7 +19,7 @@ const HistoricalDates: FC = () => {
         <HistoricalDate value={mockData[activeItemIndex].startAt} />
         <HistoricalDate value={mockData[activeItemIndex].endAt} />
       </div>
-      <BackgroundCircle className={styles.circle} count={count} width={530} activeItemIndex={activeItemIndex} setActiveElem={setActiveItemIndex} />
+      <BackgroundCircle className={styles.circle} count={count} width={530} activeItemIndex={activeItemIndex} title={mockData[activeItemIndex].title} setActiveItemIndex={setActiveItemIndex} />
     </main>
   )
 }
