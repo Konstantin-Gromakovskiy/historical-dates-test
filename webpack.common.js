@@ -26,7 +26,7 @@ export default {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/i,
+        test: /\.module\.scss$/i,
         use: [
           'style-loader',
           {
@@ -42,7 +42,12 @@ export default {
         ],
       },
       {
-        test: /\.css$/i,
+        test: /\.scss$/i,
+        exclude: /\.module\.scss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'], // без modules
+      },
+      {
+        test: /\.module\.css$/i,
         use: [
           'style-loader',
           {
@@ -55,6 +60,11 @@ export default {
             },
           },
         ],
+      },
+      {
+        test: /\.css$/i,
+        exclude: /\.module\.css$/i,
+        use: ['style-loader', 'css-loader'], // без modules
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
