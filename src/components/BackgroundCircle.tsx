@@ -35,7 +35,6 @@ const BackgroundCircle: FC<BackgroundCircleProps> = ({ width, count, className, 
               <span style={{ transform: `rotateZ(${activeItemDotDegree}deg)` }}>
                 { i + 1}
               </span>
-              {/* <h2 className={styles.title} style={{ transform: `rotateZ(${activeItemDotDegree}deg)` }}>{title}</h2> */}
             </button>
           )
         })}

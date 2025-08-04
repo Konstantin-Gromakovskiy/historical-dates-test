@@ -20,18 +20,16 @@ const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className 
         navigation
         initialSlide={activeItemIndex}
         className={styles.swiper}
-        slidesPerView={4}
-        spaceBetween={80}
+        slidesPerView="auto"
         freeMode={true}
-        height={300}
       >
         {historicalEvents.map((event, i) => (
           <SwiperSlide
             key={i}
           >
-            <div>
+            <div className={styles.eventContainer}>
               <h4 className={styles.title}>{event.date}</h4>
-              <p>{event.description}</p>
+              <p className={styles.description}>{event.description}</p>
             </div>
           </SwiperSlide>
         ))}
