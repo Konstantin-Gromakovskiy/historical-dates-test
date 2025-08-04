@@ -13,14 +13,12 @@ const HistoricalDates: FC = () => {
         <br />
         даты
       </h1>
-      <BackgroundCircle className={styles.circle} count={count} width={530} activeItemIndex={activeItemIndex} setActiveElem={setActiveItemIndex} />
-
       {/* TODO: Вынести это в отдельный компонент */}
       <div className={styles.dates}>
         <span>2015</span>
         <span>2022</span>
       </div>
-
+      <BackgroundCircle className={styles.circle} count={count} width={530} activeItemIndex={activeItemIndex} setActiveElem={setActiveItemIndex} />
     </main>
   )
 }

@@ -3,7 +3,7 @@
   src: url("/src/assets/fonts/PTSans.ttf") format("truetype");
 }
 
-//colors 
+//colors
 $primary-white: #F4F5F9;
 $secondary-white: #ffffff;
 $color-accent: #5D5FEF;
@@ -24,3 +24,7 @@ $font-size-super-large: 200px;
 $font-size-large: 56px;
 $font-size-base: 20px;
 $font-size-small: 14px;
+
+
+//animations
+$transition-animation: all 1s ease-in-out;
