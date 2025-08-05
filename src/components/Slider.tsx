@@ -18,10 +18,8 @@ const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className 
   return (
     <div className={`${styles.container} ${className ? className : ''}`}>
       <PaginationController
-        onNextClick={() => {
-        }}
-        onPrevClick={() => {
-        }}
+        onNextClick={() => {}}
+        onPrevClick={() => {}}
         currentItem={activeItemIndex + 1}
         allItems={historicalEvents.length}
       />

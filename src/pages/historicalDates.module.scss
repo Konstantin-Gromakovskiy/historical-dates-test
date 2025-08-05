@@ -6,6 +6,11 @@
   max-width: 1440px;
   border: 1px solid rgba($primary-text, 0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+
 
   &:before {
     position: absolute;
@@ -34,6 +39,7 @@
   padding-left: 78px;
   position: absolute;
   top: 16%;
+  left: 0;
   margin-left: -1px;
   line-height: 100%;
   display: inline-block;
@@ -75,6 +81,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  position: absolute;
 }
 
 .slider {

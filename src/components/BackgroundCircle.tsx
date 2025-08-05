@@ -11,29 +11,18 @@ interface BackgroundCircleProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const BackgroundCircle: FC<BackgroundCircleProps> = ({
-  width,
-  count,
-  className,
-  activeItemIndex,
-  setActiveItemIndex,
-  title,
+  width, count, className, activeItemIndex, setActiveItemIndex, title,
 }) => {
   const circleRadius = width / 2
   const points = Array.from({ length: count }, (_, i) => i)
   const activeItemDotDegree = activeItemIndex * (360 / count)
 
   return (
-    <div
-      className={`${styles.backgroundCircleContainer} ${className}`}
-      style={{ width: `${width}px` }}
-    >
+    <div className={`${styles.backgroundCircleContainer} ${className}`} style={{ width: `${width}px` }}>
       <h2 className={styles.title}>{title}</h2>
-      <div
-        className={styles.circle}
-        style={{ transform: `rotateZ(${-activeItemDotDegree}deg)` }}
-      >
+      <div className={styles.circle} style={{ transform: `rotateZ(${-activeItemDotDegree}deg)` }}>
         {points.map((i) => {
-          const offsetAngle = -60 // угол поворота круга относительно горизонта, как на макете.
+          const offsetAngle = -60 // угол п   оворота круга относительно горизонта, как на макете.
           const dotDegree = i * (360 / count)
           const { x, y } = calcDotPosition(dotDegree, circleRadius, offsetAngle)
           return (
