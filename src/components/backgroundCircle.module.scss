@@ -11,7 +11,7 @@
 .title {
   position: absolute;
   top: 7%;
-  left:83%;
+  left: 83%;
   margin-left: 10px;
   transform: translateY(-50%);
 }
@@ -28,7 +28,7 @@
   transition: $transition-animation;
 }
 
-.dot{
+.dot {
   position: absolute;
   background: $primary-text;
   color: $primary-text;
@@ -43,12 +43,13 @@
   transition: $transition-animation;
   cursor: pointer;
 
-  &[data-active="true"], &:hover{
+  &[data-active="true"], &:hover {
     width: 56px;
     height: 56px;
     background: $primary-white;
     border: 1px solid rgba($primary-text, 0.5);
-    &>span {
+
+    & > span {
       opacity: 1;
       transform: scale(1);
     }
@@ -65,5 +66,6 @@
     transition: $transition-animation;
     opacity: 0;
     transform: scale(0);
-  };
+  }
+;
 }

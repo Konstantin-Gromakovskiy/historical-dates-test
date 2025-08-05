@@ -10,15 +10,28 @@ interface BackgroundCircleProps extends HTMLAttributes<HTMLDivElement> {
   title: string
 }
 
-const BackgroundCircle: FC<BackgroundCircleProps> = ({ width, count, className, activeItemIndex, setActiveItemIndex, title }) => {
+const BackgroundCircle: FC<BackgroundCircleProps> = ({
+  width,
+  count,
+  className,
+  activeItemIndex,
+  setActiveItemIndex,
+  title,
+}) => {
   const circleRadius = width / 2
   const points = Array.from({ length: count }, (_, i) => i)
   const activeItemDotDegree = activeItemIndex * (360 / count)
 
   return (
-    <div className={`${styles.backgroundCircleContainer} ${className}`} style={{ width: `${width}px` }}>
+    <div
+      className={`${styles.backgroundCircleContainer} ${className}`}
+      style={{ width: `${width}px` }}
+    >
       <h2 className={styles.title}>{title}</h2>
-      <div className={styles.circle} style={{ transform: `rotateZ(${-activeItemDotDegree}deg)` }}>
+      <div
+        className={styles.circle}
+        style={{ transform: `rotateZ(${-activeItemDotDegree}deg)` }}
+      >
         {points.map((i) => {
           const offsetAngle = -60 // угол поворота круга относительно горизонта, как на макете.
           const dotDegree = i * (360 / count)
@@ -33,7 +46,7 @@ const BackgroundCircle: FC<BackgroundCircleProps> = ({ width, count, className, 
               onClick={() => setActiveItemIndex(i)}
             >
               <span style={{ transform: `rotateZ(${activeItemDotDegree}deg)` }}>
-                { i + 1}
+                {i + 1}
               </span>
             </button>
           )

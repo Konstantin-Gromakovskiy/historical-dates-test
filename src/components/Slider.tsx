@@ -7,7 +7,7 @@ import 'swiper/scss/navigation'
 import 'swiper/scss'
 import 'swiper/scss/pagination'
 import styles from './slider.module.scss'
-// import PaginationController from '@/shared/ui/PaginationController'
+import PaginationController from '@/shared/ui/PaginationController'
 
 interface SliderProps extends HTMLAttributes<HTMLDivElement> {
   historicalEvents: HistoricalEvent[]
@@ -17,7 +17,14 @@ interface SliderProps extends HTMLAttributes<HTMLDivElement> {
 const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className }) => {
   return (
     <div className={`${styles.container} ${className ? className : ''}`}>
-      {/* <PaginationController onNextClick={() => {}} onPrevClick={() => {}} currentItem={activeItemIndex + 1} allItems={historicalEvents.length} /> */}
+      <PaginationController
+        onNextClick={() => {
+        }}
+        onPrevClick={() => {
+        }}
+        currentItem={activeItemIndex + 1}
+        allItems={historicalEvents.length}
+      />
       <Swiper
         modules={[Navigation, FreeMode, Pagination]}
         navigation
@@ -28,9 +35,7 @@ const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className 
         pagination={true}
       >
         {historicalEvents.map((event, i) => (
-          <SwiperSlide
-            key={i}
-          >
+          <SwiperSlide key={i}>
             <div className={styles.eventContainer}>
               <h4 className={styles.title}>{event.date}</h4>
               <p className={styles.description}>{event.description}</p>

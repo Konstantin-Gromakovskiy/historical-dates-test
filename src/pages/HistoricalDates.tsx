@@ -20,8 +20,19 @@ const HistoricalDates: FC = () => {
           <HistoricalDate value={mockTimeSegments[activeItemIndex].startYear} />
           <HistoricalDate value={mockTimeSegments[activeItemIndex].endYear} />
         </div>
-        <BackgroundCircle className={styles.circle} count={mockTimeSegments.length} width={530} activeItemIndex={activeItemIndex} title={mockTimeSegments[activeItemIndex].title} setActiveItemIndex={setActiveItemIndex} />
-        <Slider className={styles.slider} historicalEvents={mockTimeSegments[activeItemIndex].events} activeItemIndex={activeItemIndex} />
+        <BackgroundCircle
+          className={styles.circle}
+          count={mockTimeSegments.length}
+          width={530}
+          activeItemIndex={activeItemIndex}
+          title={mockTimeSegments[activeItemIndex].title}
+          setActiveItemIndex={setActiveItemIndex}
+        />
+        <Slider
+          className={styles.slider}
+          historicalEvents={mockTimeSegments[activeItemIndex].events}
+          activeItemIndex={activeItemIndex}
+        />
       </main>
     </>
   )
