@@ -1,6 +1,5 @@
 @use '@/styles/variables' as *;
 .container {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,42 +17,31 @@
     padding-inline: $space-large;
   }
 
-  :global(.swiper-button-prev) {
+  :global(.swiper-button-prev), :global(.swiper-button-next) {
     background: $secondary-white;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
+    box-shadow: 0 0 15px 0 rgba($primary-text, 0.1);
     &:after {
       color: $color-accent;
       scale: 0.3;
     }
   }
-  :global(.swiper-button-disabled) {
-    opacity: 0 !important;
-    &:after {
-      opacity: 0 !important;
-    }
+  :global(.swiper-button-disabled.swiper-button-prev ), :global(.swiper-button-disabled.swiper-button-next) {
+    opacity: 0 ;
   }
 
-  :global(.swiper-button-next) {
-    background: $secondary-white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
-    &:after {
-      color: $color-accent;
-      scale: 0.3;
-    }
+  :global(.swiper-pagination) {
+    display: none;
+  }
 }
-}
-
 
 .eventContainer{
   display: flex;
   flex-direction: column;
 }
+
 .title {
   color: $color-accent;
   font-size: $font-size-medium;
@@ -61,7 +49,32 @@
   font-weight: $font-weight-base;
   margin-bottom: $space-small;
 }
+
 .description {
+}
+
+.paginationContainer {
+  width: 120px;
+  height: 88px;
+  position: absolute;
+  top:-100%;
+  left: 0;
+  margin-left: $space-large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+
+  .buttonsContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    &>:last-child {
+      transform: scaleX(-1);
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -84,12 +97,11 @@
       padding-inline: $space-base;
     }
 
-    :global(.swiper-button-prev) {
+    :global(.swiper-button-prev), :global(.swiper-button-next) {
       display: none;
     }
-
-    :global(.swiper-button-next) {
-      display: none;
+    :global(.swiper-pagination) {
+      display: inline;
     }
   }
 
