@@ -1,0 +1,25 @@
+@use '@/styles/variables' as *;
+
+.paginationController{
+  width: 120px;
+  height: 88px;
+  position: absolute;
+  top:-100%;
+  left: 0;
+  margin-left: $space-large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+
+  .buttonsContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    &>:last-child {
+      transform: scaleX(-1);
+    }
+  }
+}

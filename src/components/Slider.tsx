@@ -7,7 +7,7 @@ import 'swiper/scss/navigation'
 import 'swiper/scss'
 import 'swiper/scss/pagination'
 import styles from './slider.module.scss'
-import CircleButton from '@/shared/ui/CircleButton'
+// import PaginationController from '@/shared/ui/PaginationController'
 
 interface SliderProps extends HTMLAttributes<HTMLDivElement> {
   historicalEvents: HistoricalEvent[]
@@ -15,24 +15,9 @@ interface SliderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className }) => {
-  const currentItem = (activeItemIndex + 1).toString().padStart(2, '0')
-  // TODO: на данный момент приходит не то количество евентов
-  // Нужно сделать, чтобы отображалось количество временных отрезко а не евентов
-  const allItems = historicalEvents.length.toString().padStart(2, '0')
-
   return (
     <div className={`${styles.container} ${className ? className : ''}`}>
-      <div className={styles.paginationContainer}>
-        <div className={styles.pagination}>
-          <span>{currentItem}</span>
-          /
-          <span>{allItems}</span>
-        </div>
-        <div className={styles.buttonsContainer}>
-          <CircleButton onClick={() => {}} />
-          <CircleButton disabled onClick={() => {}} />
-        </div>
-      </div>
+      {/* <PaginationController onNextClick={() => {}} onPrevClick={() => {}} currentItem={activeItemIndex + 1} allItems={historicalEvents.length} /> */}
       <Swiper
         modules={[Navigation, FreeMode, Pagination]}
         navigation
