@@ -1,82 +1,76 @@
-# Only Digital - React TypeScript Project
+# Only Digital
 
-Тестовое задание с использованием React, TypeScript, Webpack и SCSS.
+Test assignment: a page with historical dates, animation, and responsive layout using React + TypeScript + SCSS.
 
-## Технологии
+## Description
 
-- **React 19** - современная библиотека для создания пользовательских интерфейсов
-- **TypeScript** - типизированный JavaScript
-- **Webpack 5** - сборщик модулей с оптимизациями для production
-- **SCSS** - препроцессор CSS с переменными и миксинами
-- **Hot Module Replacement** - быстрая разработка
+The project implements a page with historical periods and events:
+- Animated dates and headings
+- Circular navigator for periods
+- Event slider with pagination
+- Responsive layout for mobile devices
+- Modern React and TypeScript practices
 
-## Структура проекта
+## Technologies
+
+- **React 19**
+- **TypeScript**
+- **Webpack 5**
+- **SCSS (Sass)**
+- **Swiper.js** (for the slider)
+- **ESLint** (code linting)
+
+## Installation and Running
+
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository>
+   cd only-digital
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will open at [http://localhost:3000](http://localhost:3000)
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **TypeScript type checking:**
+   ```bash
+   npm run type-check
+   ```
+
+## Project Structure
 
 ```
 only-digital/
 ├── src/
-│   ├── index.tsx          # Точка входа приложения
-│   └── styles/
-│       └── main.scss      # Основные стили
-├── webpack.common.js      # Общая конфигурация webpack
-├── webpack.dev.js         # Конфигурация для разработки
-├── webpack.prod.js        # Конфигурация для production
-└── package.json
+│   ├── index.tsx          # Application entry point
+│   ├── init.tsx           # Application initialization
+│   ├── pages/             # Application pages
+│   ├── components/        # Reusable components
+│   ├── shared/            # Common hooks, utilities, UI components
+│   └── styles/            # SCSS variables and global styles
+├── webpack.common.js      # Common webpack configuration
+├── webpack.dev.js         # Development config
+├── webpack.prod.js        # Production config
+├── package.json
+└── README.md
 ```
 
-## Установка и запуск
+## Features
 
-### Установка зависимостей
-```bash
-npm install
-```
-
-### Разработка
-```bash
-npm start
-```
-Приложение откроется на http://localhost:3000
-
-### Сборка для production
-```bash
-npm run build
-```
-
-### Проверка типов
-```bash
-npm run type-check
-```
-
-## Особенности конфигурации
-
-### Webpack
-- **Разделение конфигов** - отдельные файлы для dev и prod
-- **Оптимизация** - минификация, tree shaking, code splitting
-- **Hot reload** - мгновенное обновление при изменениях
-- **Source maps** - для отладки в development
-
-### TypeScript
-- **Строгая типизация** - strict mode включен
-- **JSX поддержка** - для React компонентов
-- **ESNext** - современные возможности JavaScript
-
-### SCSS
-- **Переменные** - для цветов и размеров
-- **Миксины** - для переиспользуемых стилей
-- **Анимации** - CSS keyframes для интерактивности
-
-## Качество кода
-
-- ✅ TypeScript для типизации
-- ✅ ESLint для линтинга (можно добавить)
-- ✅ Prettier для форматирования (можно добавить)
-- ✅ Оптимизированная сборка
-- ✅ Современные практики React
-
-## Для собеседования
-
-Этот проект демонстрирует:
-- Понимание современных инструментов разработки
-- Умение настраивать сложные конфигурации
-- Знание лучших практик React и TypeScript
-- Внимание к производительности и качеству кода 
+- Animation for showing/hiding headings and dates
+- Custom SCSS variables and mixins
+- Strict TypeScript typing
+- Code linting with ESLint
+- Optimized Webpack build
