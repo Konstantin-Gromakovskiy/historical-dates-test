@@ -2,6 +2,7 @@ import { FC, HTMLAttributes } from 'react'
 import type { HistoricalEvent } from '@/__fixtures__/mockData'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, FreeMode, Pagination } from 'swiper/modules'
+import { useFadeTransition } from '@/shared/hooks/useFadeTransition'
 import './slider.module.scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss'
@@ -13,8 +14,10 @@ interface SliderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Slider: FC<SliderProps> = ({ historicalEvents, className }) => {
+  const { visible, currentData: currentHistoricalEvents } = useFadeTransition(historicalEvents)
+
   return (
-    <div className={`${styles.container} ${className ? className : ''}`}>
+    <div className={`${styles.container} ${className ? className : ''} ${visible ? styles.fadeIn : styles.fadeOut} `}>
       <Swiper
         modules={[Navigation, FreeMode, Pagination]}
         navigation
@@ -24,7 +27,7 @@ const Slider: FC<SliderProps> = ({ historicalEvents, className }) => {
         freeMode={true}
         pagination={true}
       >
-        {historicalEvents.map((event, i) => (
+        {currentHistoricalEvents.map((event, i) => (
           <SwiperSlide key={i}>
             <div className={styles.eventContainer}>
               <h4 className={styles.title}>{event.date}</h4>

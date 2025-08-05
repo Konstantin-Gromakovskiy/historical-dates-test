@@ -95,6 +95,15 @@
 
 .subtitle {
   display: none;
+  transition: opacity 0.3s ease;
+
+  &.fadeIn {
+    opacity: 1;
+  }
+
+  &.fadeOut {
+    opacity: 0;
+  }
 }
 
 @media (max-height: 980px), (max-width: 980px) {

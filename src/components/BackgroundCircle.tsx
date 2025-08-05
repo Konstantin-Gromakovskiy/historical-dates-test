@@ -1,6 +1,7 @@
 import type { FC, HTMLAttributes } from 'react'
 import styles from './backgroundCircle.module.scss'
 import calcDotPosition from '@/shared/utils/calcDotPosition'
+import { useFadeTransition } from '@/shared/hooks/useFadeTransition'
 
 interface BackgroundCircleProps extends HTMLAttributes<HTMLDivElement> {
   width: number
@@ -17,9 +18,11 @@ const BackgroundCircle: FC<BackgroundCircleProps> = ({
   const points = Array.from({ length: count }, (_, i) => i)
   const activeItemDotDegree = activeItemIndex * (360 / count)
 
+  const { visible, currentData: currentTitle } = useFadeTransition(title)
+
   return (
     <div className={`${styles.backgroundCircleContainer} ${className}`} style={{ width: `${width}px` }}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={`${styles.title} ${visible ? styles.fadeIn : styles.fadeOut}`}>{currentTitle}</h2>
       <div className={styles.circle} style={{ transform: `rotateZ(${-activeItemDotDegree}deg)` }}>
         {points.map((i) => {
           const offsetAngle = -60 // угол п   оворота круга относительно горизонта, как на макете.
