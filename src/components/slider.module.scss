@@ -1,4 +1,5 @@
 @use '@/styles/variables' as *;
+
 .container {
   display: flex;
   align-items: center;
@@ -6,14 +7,14 @@
 }
 
 :global(.swiper) {
-  height: 140px;
+  height: 100%;
 
   :global(.swiper-slide) {
     width: 300px;
     margin-right: $space-large;
   }
 
-  :global(.swiper-wrapper){
+  :global(.swiper-wrapper) {
     padding-inline: $space-large;
   }
 
@@ -23,13 +24,15 @@
     width: 40px;
     height: 40px;
     box-shadow: 0 0 15px 0 rgba($primary-text, 0.1);
+
     &:after {
       color: $color-accent;
       scale: 0.3;
     }
   }
+
   :global(.swiper-button-disabled.swiper-button-prev ), :global(.swiper-button-disabled.swiper-button-next) {
-    opacity: 0 ;
+    opacity: 0;
   }
 
   :global(.swiper-pagination) {
@@ -37,7 +40,7 @@
   }
 }
 
-.eventContainer{
+.eventContainer {
   display: flex;
   flex-direction: column;
 }
@@ -57,7 +60,7 @@
   width: 120px;
   height: 88px;
   position: absolute;
-  top:-100%;
+  top: -100%;
   left: 0;
   margin-left: $space-large;
   display: flex;
@@ -65,13 +68,13 @@
   justify-content: space-between;
   align-items: start;
 
-  .buttonsContainer{
+  .buttonsContainer {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
 
-    &>:last-child {
+    & > :last-child {
       transform: scaleX(-1);
     }
   }
@@ -79,13 +82,12 @@
 
 @media (max-width: 768px) {
 
-
   .container {
     font-size: $font-size-small;
   }
 
   :global(.swiper) {
-    height: 140px;
+    height: fit-content;
 
     :global(.swiper-slide) {
       margin-right: $space-base;
@@ -93,19 +95,22 @@
       width: 170px;
     }
 
-    :global(.swiper-wrapper){
+    :global(.swiper-wrapper) {
       padding-inline: $space-base;
     }
 
     :global(.swiper-button-prev), :global(.swiper-button-next) {
       display: none;
     }
+
     :global(.swiper-pagination) {
-      display: inline;
+      display: block;
+      position: relative;
+      margin-top: $space-large;
     }
   }
 
-  .eventContainer{
+  .eventContainer {
   }
 
   .title {

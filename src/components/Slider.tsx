@@ -7,26 +7,18 @@ import 'swiper/scss/navigation'
 import 'swiper/scss'
 import 'swiper/scss/pagination'
 import styles from './slider.module.scss'
-import PaginationController from '@/shared/ui/PaginationController'
 
 interface SliderProps extends HTMLAttributes<HTMLDivElement> {
   historicalEvents: HistoricalEvent[]
-  activeItemIndex: number
 }
 
-const Slider: FC<SliderProps> = ({ historicalEvents, activeItemIndex, className }) => {
+const Slider: FC<SliderProps> = ({ historicalEvents, className }) => {
   return (
     <div className={`${styles.container} ${className ? className : ''}`}>
-      <PaginationController
-        onNextClick={() => {}}
-        onPrevClick={() => {}}
-        currentItem={activeItemIndex + 1}
-        allItems={historicalEvents.length}
-      />
       <Swiper
         modules={[Navigation, FreeMode, Pagination]}
         navigation
-        initialSlide={activeItemIndex}
+        initialSlide={1}
         className={styles.swiper}
         slidesPerView="auto"
         freeMode={true}

@@ -12,13 +12,7 @@ interface PaginationControllerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const PaginationController: FC<PaginationControllerProps> = ({
-  onNextClick,
-  onPrevClick,
-  currentItem,
-  allItems,
-  className,
-  prevDisabled = false,
-  nextDisabled = false,
+  onNextClick, onPrevClick, currentItem, allItems, className, prevDisabled = false, nextDisabled = false,
 }) => {
   const currentItemFormattedItem = currentItem.toString().padStart(2, '0')
   const allItemsFormattedItem = allItems.toString().padStart(2, '0')
@@ -31,8 +25,8 @@ const PaginationController: FC<PaginationControllerProps> = ({
         <span>{allItemsFormattedItem}</span>
       </div>
       <div className={styles.buttonsContainer}>
-        <CircleButton disabled={prevDisabled} onClick={onPrevClick} />
-        <CircleButton disabled={nextDisabled} onClick={onNextClick} />
+        <CircleButton className={styles.button} disabled={prevDisabled} onClick={onPrevClick} />
+        <CircleButton className={styles.button} disabled={nextDisabled} onClick={onNextClick} />
       </div>
     </div>
   )
