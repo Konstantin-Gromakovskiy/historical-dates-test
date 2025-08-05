@@ -77,14 +77,23 @@
 
 .slider {
   position: absolute;
-  width: 100%;
   bottom: 0;
   left: 0;
-  margin-bottom: 100px;
-  padding-inline: $space-large;
+  margin-bottom: $space-large;
+  width: 100%;
 }
 
 @media (max-height: 980px) {
+  .dates {
+    font-size: calc($font-size-super-large * 0.7);
+    gap: 40px
+  }
+  .slider{
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 980px) {
   .dates {
     font-size: calc($font-size-super-large * 0.7);
     gap: 40px
@@ -117,9 +126,9 @@
         display: none;
       }
     }
-    .slider {
-      padding-inline: $space-base;
 
+    .slider{
+      border-top: 1px solid rgba($primary-text, 0.5);
     }
   }
 

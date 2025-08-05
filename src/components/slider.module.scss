@@ -10,8 +10,12 @@
   height: 140px;
 
   :global(.swiper-slide) {
+    width: 300px;
     margin-right: $space-large;
-    width: fit-content;
+  }
+
+  :global(.swiper-wrapper){
+    padding-inline: $space-large;
   }
 
   :global(.swiper-button-prev) {
@@ -49,7 +53,6 @@
 .eventContainer{
   display: flex;
   flex-direction: column;
-  width: 300px;
 }
 .title {
   color: $color-accent;
@@ -66,18 +69,19 @@
 
   .container {
     font-size: $font-size-small;
-    margin-bottom: $space-large;
-
-
   }
 
   :global(.swiper) {
     height: 140px;
-    border-top: 1px solid rgba($primary-text, 0.5);
-    padding-top: $space-base !important;
 
     :global(.swiper-slide) {
       margin-right: $space-base;
+      padding-top: $space-base;
+      width: 170px;
+    }
+
+    :global(.swiper-wrapper){
+      padding-inline: $space-base;
     }
 
     :global(.swiper-button-prev) {
@@ -89,7 +93,8 @@
     }
   }
 
-
+  .eventContainer{
+  }
 
   .title {
     display: inline-block;
