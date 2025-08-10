@@ -1,4 +1,4 @@
-# Only Digital
+# Historical dates
 
 Test assignment: a page with historical dates, animation, and responsive layout using React + TypeScript + SCSS.
 
@@ -24,8 +24,8 @@ The project implements a page with historical periods and events:
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repository>
-   cd only-digital
+   git clone https://github.com/Konstantin-Gromakovskiy/historical-dates-test.git
+   cd historical-dates-test
    ```
 
 2. **Install dependencies:**
