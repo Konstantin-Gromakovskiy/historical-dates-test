@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC } from 'react'
-import styles from './CircleButton.module.scss'
+import styles from './circleButton.module.scss'
 // import ArrowIcon from '@/assets/icons/arrow.svg'
 
 // TODO: разобраться с имортом кнопки и сделать стрелку нужного цвета
