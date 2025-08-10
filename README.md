@@ -1,10 +1,12 @@
 # Historical dates
 
-Test assignment: a page with historical dates, animation, and responsive layout using React + TypeScript + SCSS.
+Test assignment: a page with historical dates, animation, and responsive layout using React +
+TypeScript + SCSS.
 
 ## Description
 
 The project implements a page with historical periods and events:
+
 - Animated dates and headings
 - Circular navigator for periods
 - Event slider with pagination
@@ -47,6 +49,10 @@ The project implements a page with historical periods and events:
 5. **TypeScript type checking:**
    ```bash
    npm run type-check
+   ```
+6. **Run tests**
+   ```bash
+   npm run test 
    ```
 
 ## Project Structure
