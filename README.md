@@ -14,6 +14,7 @@ The project implements a page with historical periods and events:
 - Event slider with pagination
 - Responsive layout for mobile devices
 - Modern React and TypeScript practices
+- Configured ci/cd for testing and deployment on vercel
 
 ## Technologies
 
@@ -23,6 +24,7 @@ The project implements a page with historical periods and events:
 - **SCSS (Sass)**
 - **Swiper.js** (for the slider)
 - **ESLint** (code linting)
+- **Jest**
 
 ## Installation and Running
 
@@ -62,6 +64,8 @@ The project implements a page with historical periods and events:
 ```
 only-digital/
 ├── src/
+│   ├──__fixtures__        # mock-data for the page
+│   ├──__tests__           # scripts for testing
 │   ├── index.tsx          # Application entry point
 │   ├── init.tsx           # Application initialization
 │   ├── pages/             # Application pages
@@ -82,3 +86,4 @@ only-digital/
 - Strict TypeScript typing
 - Code linting with ESLint
 - Optimized Webpack build
+- React component tests
