@@ -1,6 +1,7 @@
 # Historical dates
 
 Test assignment: a page with historical dates, animation, and responsive layout using React + TypeScript + SCSS.
+
 You can try in on [Vercel](historical-dates-test.vercel.app)
 
 ## Description
