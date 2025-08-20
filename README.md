@@ -62,7 +62,7 @@ The project implements a page with historical periods and events:
 ## Project Structure
 
 ```
-only-digital/
+historical-dates/
 ├── src/
 │   ├──__fixtures__        # mock-data for the page
 │   ├──__tests__           # scripts for testing
